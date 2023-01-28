@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposeFebrury</string>
+    <string name="box_lise_empty">Box list emptyList...</string>
 </resources>
