@@ -32,7 +32,8 @@ fun HomeScreen() {
         Icon(
             painter = painterResource(id = com.example.composefebrury.R.drawable.ic_launcher_foreground),
             contentDescription = null,
-            modifier = Modifier.align(CenterHorizontally)
+            modifier = Modifier.align(CenterHorizontally),
+            tint = Color.Green
         )
     }
 }
