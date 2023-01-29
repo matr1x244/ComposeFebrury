@@ -1,5 +1,6 @@
 package com.example.composefebrury.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,7 +24,7 @@ fun HomeScreen() {
                 .padding(bottom = 15.dp)
                 .width(200.dp)
                 .height(200.dp)
-//            .background(Color.Blue, shape = RoundedCornerShape(10.dp))) // закругляем края
+                .background(Color.Blue, shape = RoundedCornerShape(15.dp)) // закругляем края
 //            .background(Color.Blue, shape = CircleShape)) // либо делаем круг
 //                .background(
 //                    brush = Brush.linearGradient( // можно задать градиент box
