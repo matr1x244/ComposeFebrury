@@ -19,11 +19,11 @@ class MainActivity : ComponentActivity() {
 
                 onCheckedChange = {
                     checked.value = it // записываем значение
-                },
-
-                onCheckedChangeClick = {
-                    checked.value = !checked.value // для Text сравниеваем значение
                 })
+//
+//                onCheckedChangeClick = {
+//                    checked.value = !checked.value // для Text сравниеваем значение
+//                })
 
         }
     }

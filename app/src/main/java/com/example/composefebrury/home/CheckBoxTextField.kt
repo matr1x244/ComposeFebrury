@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.sp
 fun CheckBoxTextField(
     checked: State<Boolean>, // boolean для чексбокса
     onCheckedChange: (Boolean) -> Unit, // unit boolean для отслеживания в checkbox
-    onCheckedChangeClick: () -> Unit // unit для отслеживания клика
+//    onCheckedChangeClick: () -> Unit // unit для отслеживания клика
 ) {
     val isCheckedValue = checked.value // записываем в isCheckedValue значение boolean
 
@@ -34,7 +34,8 @@ fun CheckBoxTextField(
             text = "CheckBox Cliker",
             fontSize = 15.sp,
             modifier = Modifier
-                .clickable(onClick = onCheckedChangeClick) // тапаем по тексту и меняем checkbox
+                .clickable(onClick = {onCheckedChange.invoke(!checked.value)})
+//                .clickable(onClick = onCheckedChangeClick) // тапаем по тексту и меняем checkbox
         )
     }
 }
