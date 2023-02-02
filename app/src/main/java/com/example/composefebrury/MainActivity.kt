@@ -1,12 +1,10 @@
 package com.example.composefebrury
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.mutableStateOf
 import com.example.composefebrury.home.CheckBoxTextField
-import com.example.composefebrury.home.StateScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -16,16 +14,16 @@ class MainActivity : ComponentActivity() {
         setContent {
 
             CheckBoxTextField(
-                // записываем значения состояния нового значения checkbox
-                checked = checked,
-                onCheckedChange = { newCheckedValue ->
-                checked.value = newCheckedValue
-                    if(newCheckedValue == true){
-                        println("@@@ ${checked.value}")
-                    } else {
-                        println("@@@ ${checked.value}")
-                    }
-            })
+
+                checked = checked, // сравниваем значение
+
+                onCheckedChange = {
+                    checked.value = it // записываем значение
+                },
+
+                onCheckedChangeClick = {
+                    checked.value = !checked.value // для Text сравниеваем значение
+                })
 
         }
     }
