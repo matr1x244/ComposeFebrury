@@ -1,1 +1,1 @@
-# ComposeFebrury Тестовое приложение Jetpack Compose
+Тестовое приложение Jetpack Compose
