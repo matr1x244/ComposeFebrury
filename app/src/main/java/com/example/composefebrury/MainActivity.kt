@@ -21,7 +21,7 @@ import com.example.composefebrury.home.TextField
 
 class MainActivity : ComponentActivity() {
 
-    private val checked = mutableStateOf(true) // записываем значение для checkbox
+//    private val checked = mutableStateOf(true) // записываем значение для checkbox
 
     private var countClickers = mutableStateOf(0)
 
@@ -38,11 +38,7 @@ class MainActivity : ComponentActivity() {
 //            val textField = remember{ mutableStateOf("")} // А функция remember позволяет сохранить это значение
 
 
-            CheckBoxTextField(
-                checked = checked, // сравниваем значение
-                onCheckedChange = {
-                    checked.value = it // записываем значение
-                })
+            CheckBoxTextField()
 
 
 //
