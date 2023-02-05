@@ -16,21 +16,30 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.composefebrury.home.CheckBoxTextField
+import com.example.composefebrury.home.StateScreen
 import com.example.composefebrury.home.TextField
 
 class MainActivity : ComponentActivity() {
 
     private val checked = mutableStateOf(true) // записываем значение для checkbox
 
+    private var countClickers = mutableStateOf(0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            StateScreen(counter = countClickers, onCounterClickers = {
+                countClickers.value++
+                Toast.makeText(this, "${countClickers.value}", Toast.LENGTH_SHORT).show()
+            })
+
+
+
+
             val textField = remember{ mutableStateOf("")} // А функция remember позволяет сохранить это значение
-
             CheckBoxTextField(
-
                 checked = checked, // сравниваем значение
-
                 onCheckedChange = {
                     checked.value = it // записываем значение
                 })
@@ -38,7 +47,6 @@ class MainActivity : ComponentActivity() {
 //                onCheckedChangeClick = {
 //                    checked.value = !checked.value // для Text сравниеваем значение
 //                })
-
                 TextField(
                     textField = textField,
                     onValueChangeText = { newText ->
