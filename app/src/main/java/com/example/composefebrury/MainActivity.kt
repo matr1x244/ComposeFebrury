@@ -29,31 +29,33 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            StateScreen(counter = countClickers, onCounterClickers = {
-                countClickers.value++
-                Toast.makeText(this, "${countClickers.value}", Toast.LENGTH_SHORT).show()
-            })
+//            StateScreen(counter = countClickers, onCounterClickers = {
+//                countClickers.value++
+//                Toast.makeText(this, "${countClickers.value}", Toast.LENGTH_SHORT).show()
+//            })
 
 
+//            val textField = remember{ mutableStateOf("")} // А функция remember позволяет сохранить это значение
 
 
-            val textField = remember{ mutableStateOf("")} // А функция remember позволяет сохранить это значение
             CheckBoxTextField(
                 checked = checked, // сравниваем значение
                 onCheckedChange = {
                     checked.value = it // записываем значение
                 })
+
+
 //
 //                onCheckedChangeClick = {
 //                    checked.value = !checked.value // для Text сравниеваем значение
 //                })
-                TextField(
-                    textField = textField,
-                    onValueChangeText = { newText ->
-                        if (textField.value.length < 50) {
-                            textField.value = newText
-                        }
-                    })
+//                TextField(
+//                    textField = textField,
+//                    onValueChangeText = { newText ->
+//                        if (textField.value.length < 50) {
+//                            textField.value = newText
+//                        }
+//                    })
         }
     }
 

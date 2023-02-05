@@ -2,6 +2,7 @@ package com.example.composefebrury.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Checkbox
@@ -21,22 +22,28 @@ fun CheckBoxTextField(
 ) {
     val isCheckedValue = checked.value // записываем в isCheckedValue значение boolean
 
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier
-            .padding(vertical = 20.dp)
-    ) {
-        Checkbox(checked = isCheckedValue, // получаем значение
-            onCheckedChange = onCheckedChange // сравниваем значение
-        )
-        Text(
-            text = "CheckBox Cliker",
-            fontSize = 15.sp,
+    Column {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
-                .clickable(onClick = {onCheckedChange.invoke(!checked.value)})
+                .padding(vertical = 20.dp)
+        ) {
+            Checkbox(
+                checked = isCheckedValue, // получаем значение
+                onCheckedChange = onCheckedChange // сравниваем значение
+            )
+            Text(
+                text = "CheckBox Cliker",
+                fontSize = 15.sp,
+                modifier = Modifier
+                    .clickable(onClick = { onCheckedChange.invoke(!checked.value) })
 //                .clickable(onClick = onCheckedChangeClick) // тапаем по тексту и меняем checkbox
-        )
+            )
+        }
+        if (isCheckedValue) {
+            Text(text = "НОВЫЙ ТЕКСТ!!!!!!!!!!!!!!!!!")
+        }
     }
 }
 
