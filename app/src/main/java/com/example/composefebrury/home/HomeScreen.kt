@@ -113,7 +113,7 @@ fun HomeScreen() {
 
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun HomeScreenView() {
     HomeScreen()

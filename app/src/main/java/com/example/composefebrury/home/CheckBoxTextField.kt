@@ -13,9 +13,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+@Preview(name = "CheckBoxTextField", showBackground = true, showSystemUi = true,
+    device = "spec:width=1080px,height=2340px,dpi=640"
+)
 @Composable
 fun CheckBoxTextField(
 //    checked: State<Boolean>, // boolean для чексбокса
@@ -51,8 +54,7 @@ fun CheckBoxTextField(
     }
 }
 
-//@Preview(name = "CheckBoxTextField")
-//@Composable
-//private fun PreviewCheckBoxTextField() {
-//    CheckBoxTextField()
-//}
+@Composable
+private fun PreviewCheckBoxTextField() {
+    CheckBoxTextField()
+}

@@ -14,8 +14,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composefebrury.home.CheckBoxTextField
+import com.example.composefebrury.home.EditTextTextField
 import com.example.composefebrury.home.StateScreen
 import com.example.composefebrury.home.TextField
 
@@ -25,8 +27,11 @@ class MainActivity : ComponentActivity() {
 
     private var countClickers = mutableStateOf(0)
 
+    val text = mutableStateOf("some text")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
 
 //            StateScreen(counter = countClickers, onCounterClickers = {
@@ -37,9 +42,11 @@ class MainActivity : ComponentActivity() {
 
 //            val textField = remember{ mutableStateOf("")} // А функция remember позволяет сохранить это значение
 
+            //CheckBoxTextField()
 
-            CheckBoxTextField()
-
+            EditTextTextField(text = text, onValueChange = {newText ->
+                text.value = newText
+            })
 
 //
 //                onCheckedChangeClick = {
